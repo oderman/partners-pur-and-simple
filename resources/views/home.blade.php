@@ -7,20 +7,38 @@
 
 @section('content')
 
-  <h2 align="center">{{ $page->pag_name }}</h2>
-  <p align="center">{{ $page->pag_body }}</p>
+<div class="mt-2">  
+<h2 class="text-center">{{ $page->pag_name }}</h2>
+<p class="text-start">{{ $page->pag_body }}</p>
+</div>
 
 
-  <hr>
-  <div class="columns-3">
+
+  <div class="container text-center mb-5">
+  <div class="row">
   @foreach ($partners as $partner)
 
-  <p>{{ $partner->par_name }}</p>
+  <div class="col gy-3">
 
-  <img class="w-full aspect-video h-10" src="{{ asset('images/partners.png') }}" />
 
+  <div class="card" style="width: 18rem;">
+
+  <img 
+  src="{{ asset('images/partners/'.$partner->par_logo) }}" 
+  class="card-img-top" 
+  alt="{{ $partner->par_name }}"
+  style="height: 15rem;"
+  >
+  
+  <div class="card-body">
+    <a href="{{ $partner->par_website }}" class="btn btn-warning" target="_blank">Sitio web</a>
+  </div>
+
+</div>
+</div>
 
   @endforeach
+  </div>
   </div>
 
 @endsection

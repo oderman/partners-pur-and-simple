@@ -68,7 +68,10 @@ class PageController extends Controller
     public function home(){
 
         $page = Page::where('id', '=', 1)->firstOrFail();
-        $partners = Partner::where('par_state', '=', 1)->get();
+
+        $partners = Partner::where('par_state', '=', 1)
+        ->orderBy('par_position', 'asc')
+        ->get();
 
         return view('home', [
             'page' => $page,

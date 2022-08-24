@@ -15,6 +15,20 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+
+                    <x-nav-link :href="route('pages.index')" :active="request()->routeIs('pages.index')">
+                        {{ __('Páginas') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('partners.index')" :active="request()->routeIs('partners.index')">
+                        {{ __('Socios') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('home')">
+                        {{ __('Sitio web') }}
+                    </x-nav-link>
+
+                    
                 </div>
             </div>
 
@@ -41,7 +55,7 @@
                             <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                {{ __('Log Out') }}
+                                {{ __('Cerrar Sesión') }}
                             </x-dropdown-link>
                         </form>
                     </x-slot>
@@ -66,6 +80,18 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('pages.index')" :active="request()->routeIs('pages.index')">
+                {{ __('Páginas') }}
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('partners.index')" :active="request()->routeIs('partners.index')">
+                {{ __('Socios') }}
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('home')">
+                {{ __('Sitio web') }}
+            </x-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->
@@ -83,7 +109,7 @@
                     <x-responsive-nav-link :href="route('logout')"
                             onclick="event.preventDefault();
                                         this.closest('form').submit();">
-                        {{ __('Log Out') }}
+                        {{ __('Cerrar sesión') }}
                     </x-responsive-nav-link>
                 </form>
             </div>

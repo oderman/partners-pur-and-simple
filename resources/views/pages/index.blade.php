@@ -13,8 +13,14 @@
 
                     <h2 class="font-semibold text-xl text-gray-800 leading-tight flex items-center justify-between">
                         {{ __('Paginas') }}
+                        
+                        <!--
+                            En el momento no se le permitirá al usuario crear paginas nuevas, pero 
+                            ya la funciolidad existe.
 
                         <a href="{{ route('pages.create') }}" class="text-xs bg-gray-800 text-white rounded px-2 py-1">Crear</a>
+                    -->
+
                     </h2>
                         <hr>
                         
@@ -25,7 +31,6 @@
                             <th>Página</th>
                             <th>Estado</th>
                             <th>Editar</th>
-                            <th>Eliminar</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -36,8 +41,11 @@
                                     <td class="px-6 py-4">{{ $page->pag_name }}</td>
                                     <td class="px-6 py-4">{{ $page->pag_state }}</td>
                                     <td class="px-6 py-4">
-                                        <a href="{{ route('pages.edit', $page) }}" class="text-indigo-600">Editar</a>
+                                        <a href="{{ route('pages.edit', $page) }}" class=" bg-gray-800 text-white rounded px-4 py-2">Editar</a>
                                     </td>
+                                    <!--
+                                        En el momento no se le permitirá al usuario eliminar páginas, ya que esta es la única activa en este momento.
+                            
                                     <td class="px-6 py-4">
 
                                         <form action="{{ route('pages.destroy', $page) }}" method="POST">
@@ -52,7 +60,7 @@
                                             >
                                         </form>
 
-                                    </td>
+                                    </td>-->
                                 </tr>
 
                             @endforeach
